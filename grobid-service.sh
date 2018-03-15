@@ -3,7 +3,7 @@
 set -e # everything must succeed.
 
 image_name=lfoppiano/grobid:0.5.1
-port=8085
+port=8070
 
 if [ "$1" == 'stop' ]; then
   docker stop $(docker ps -a -q --filter ancestor=${image_name} --format="{{.ID}}")
