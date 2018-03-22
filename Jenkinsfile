@@ -35,4 +35,11 @@ elifePipeline {
         },
         'containers--medium'
     )
+
+    elifeMainlineOnly {
+        stage 'Deploy on demo', {
+            checkout scm
+            builderDeployRevision 'sciencebeam-texture--demo', commit
+        }
+    }
 }
