@@ -12,7 +12,7 @@ elifePipeline {
             stage 'Build images', {
                 checkout scm
                 sh "IMAGE_TAG=${commit} docker-compose build"
-                image = DockerImage.elifesciences('sciencebeam_texture', commit)
+                image = DockerImage.elifesciences(this, 'sciencebeam_texture', commit)
             }
 
             stage 'Project tests', {
