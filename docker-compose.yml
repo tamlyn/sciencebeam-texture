@@ -7,6 +7,7 @@ services:
             dockerfile: Dockerfile
             args:
                 commit: "${TEXTURE_COMMIT}"
+                dependencies_sciencebeam: "${SCIENCEBEAM_COMMIT}"
         image: elifesciences/sciencebeam_texture:${IMAGE_TAG}
         command: npm start
         volumes:
