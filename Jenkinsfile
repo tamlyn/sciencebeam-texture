@@ -40,6 +40,7 @@ elifePipeline {
         stage 'Deploy on demo', {
             checkout scm
             builderDeployRevision 'sciencebeam-texture--demo', commit
+            builderSmokeTests 'sciencebeam-texture--demo', '/home/elife/sciencebeam-texture'
         }
     }
 }
