@@ -25,7 +25,7 @@ services:
         depends_on:
             - grobid
     grobid:
-        image: lfoppiano/grobid:0.5.1
+        image: lfoppiano/grobid:${GROBID_TAG}
         ports:
             - "8070:8070"
 
