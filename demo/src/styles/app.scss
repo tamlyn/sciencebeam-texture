@@ -1,0 +1,35 @@
+body:not(.js) .js-only {
+  display: none;
+}
+
+input {
+  @include font-size-and-vertical-height(16);
+}
+
+.busy:before {
+  content: "";
+  float: right;
+  @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
+}
+
+.message {
+  @include typeg-form-message();
+}
+
+.message--success {
+    color: $color-success;
+}
+
+.message--error {
+  color: $color-attention;
+}
+
+section {
+  border: 1px solid $color-text-dividers;
+  padding: 1rem;
+}
+
+.sc-app {
+  @include blg-spacing("top", "medium");
+  height: 150vh;
+}
