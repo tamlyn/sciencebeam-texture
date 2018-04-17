@@ -45,17 +45,13 @@ Effect:
 * Texture will be available on [port 4000](http://localhost:4000/).
 * [GROBID](grobid.readthedocs.io) will be available on [port 8070](http://localhost:8070/).
 
-### Convert Sample PDF using ScienceBeam Container
+### Convert Sample PDFs using ScienceBeam Container
 
 ```bash
-./sciencebeam-convert.sh
+./sciencebeam-convert-examples.sh
 ```
 
 Effect:
 
-* Downloads sample PDF
-* Converts PDF by running the _elifesciences/sciencebeam_ container (output is still TEI).
-
-### Show results in Texture
-
-TODO
+* Downloads sample PDFs
+* Converts PDF by running the _elifesciences/sciencebeam_ container
