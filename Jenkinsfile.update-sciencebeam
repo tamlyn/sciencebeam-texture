@@ -1,0 +1,15 @@
+def sciencebeamCommit = params.commit
+
+elifeUpdatePipeline(
+    { _commit ->
+        sh "sed -i -e 's/SCIENCEBEAM_COMMIT=.*/SCIENCEBEAM_COMMIT=${sciencebeamCommit}/' .env"
+        sh "git add .env"
+    },
+    {
+        return "Updated sciencebeam to ${sciencebeamCommit}"
+    },
+    'update_sciencebeam/',
+    false,
+    'develop',
+    true
+)
