@@ -191,10 +191,16 @@ gulp.task('server', () => {
       const apiPath = parsedApiUrl.path;
       const apiProxy = proxy(parsedApiUrl.host, {
         proxyReqPathResolver: req => {
-          const targetUrl = url.parse(req.baseUrl).path.replace('/api', apiPath);
+          const parsedUrl = url.parse(req.originalUrl);
+          const targetUrl = (
+            parsedUrl.path.replace('/api', apiPath) +
+            (parsedUrl.search || '')
+          );
           gutil.log('proxy request to', targetUrl);
           return targetUrl;
-        }
+        },
+        parseReqBody: false,
+        reqBodyEncoding: null
       });
       server.use(bodyParser.raw({limit: '50mb', type: 'application/pdf'}));
       server.use("/api/*", apiProxy);
